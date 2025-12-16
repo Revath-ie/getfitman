@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
-import 'home.dart'; // Navigates to Home (Landing) first
+import 'package:flutter/material.dart';
+import 'home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(const Duration(seconds: 2), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => const HomePage()),
+        MaterialPageRoute(builder: (_) => const HomeScreen()),
       );
     });
   }
@@ -33,16 +33,12 @@ class _SplashScreenState extends State<SplashScreen> {
               "GetFitMan",
               style: TextStyle(
                 fontSize: 42,
-                fontWeight: FontWeight.w900, // Very bold
+                fontWeight: FontWeight.bold,
                 color: Colors.white,
-                letterSpacing: 1.2,
               ),
             ),
             SizedBox(height: 20),
-            CircularProgressIndicator(
-              color: Colors.white,
-              strokeWidth: 3,
-            )
+            CircularProgressIndicator(color: Colors.white),
           ],
         ),
       ),
